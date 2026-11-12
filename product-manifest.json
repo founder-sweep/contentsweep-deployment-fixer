@@ -44,5 +44,10 @@
     "version": "1.0.0",
     "python": ">=3.12",
     "local_only": true
+  },
+  "owned_skill_files": {
+    "SKILL.md": "e9254c2a5821d5df0848e1a73851919f400df4a814779140fb22ccbd6a505ed1",
+    "references/hosted-workflow.md": "5cef7548bdb31b5c5b1d155c3f1a73d515e11f106724c6526856141e116c3e75",
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
   }
 }
