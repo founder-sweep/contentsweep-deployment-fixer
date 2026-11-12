@@ -1,0 +1,21 @@
+{
+  "name": "contentsweep-deployment-fixer",
+  "version": "1.0.0",
+  "description": "Assess a stateless FastAPI container and prepare an advisory ECS Express plan.",
+  "mcpServers": {
+    "contentsweep-deployment-fixer": {
+      "headers": {
+        "X-API-Key": "${CONTENTSWEEP_DEPLOYMENT_FIXER_API_KEY}"
+      },
+      "httpUrl": "https://mcp.contentsweep.ai/v1/deployment-fixer/mcp/"
+    }
+  },
+  "settings": [
+    {
+      "name": "Deployment Fixer API key",
+      "description": "Verified organization API key for Deployment Fixer",
+      "envVar": "CONTENTSWEEP_DEPLOYMENT_FIXER_API_KEY",
+      "sensitive": true
+    }
+  ]
+}

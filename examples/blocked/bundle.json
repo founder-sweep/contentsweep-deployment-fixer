@@ -1,0 +1,8 @@
+{
+  "files": {
+    "Dockerfile": "FROM python:3.12-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\nCOPY app.py .\nEXPOSE 8000\nCMD [\"uvicorn\",\"app:app\",\"--host\",\"0.0.0.0\",\"--port\",\"8000\",\"--reload\"]\nUSER root\n",
+    "app.py": "from fastapi import FastAPI\napp = FastAPI()\n@app.get(\"/health\")\ndef health():\n    return {\"status\": \"ok\"}\n",
+    "requirements.txt": "fastapi\nuvicorn\n"
+  },
+  "region": "us-east-1"
+}

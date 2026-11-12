@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "contentsweep-deployment-fixer": {
+      "command": "${CONTENTSWEEP_DEPLOYMENT_FIXER_MCP_COMMAND}",
+      "args": []
+    }
+  }
+}

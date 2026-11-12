@@ -1,0 +1,200 @@
+{
+  "advisory_steps": [
+    "Resolve the evidence-linked findings and configuration gaps.",
+    "Build, test and publish the container through your own trusted process.",
+    "Review the image, task execution role, infrastructure role and service configuration with your AWS administrator.",
+    "Use your own approved deployment process to create an ECS Express Mode service; this product performs no changes."
+  ],
+  "assessment": {
+    "coverage": {
+      "execution": "not_performed",
+      "repository": "analyzed",
+      "target": "ecs_express_planner"
+    },
+    "findings": [
+      {
+        "confidence": 1.0,
+        "evidence": [
+          {
+            "excerpt": null,
+            "fact": "An external FROM image lacks a valid sha256 digest.",
+            "locator": "Dockerfile:1",
+            "source": "repository"
+          }
+        ],
+        "id": "PR-DOCKER-001",
+        "metadata": {
+          "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+          "evidence_kind": "syntax",
+          "instance_id": "sha256:36f209d4dddbde23cae9f3c8546f5840bf46d6fba4f886360814661b4b8335f6",
+          "line": 1,
+          "path": "Dockerfile",
+          "rule_version": "2"
+        },
+        "origin": "deterministic",
+        "remediation": "Consider a reviewed sha256 digest and an explicit update process; tags can change.",
+        "severity": "medium",
+        "status": "open",
+        "title": "External base image is mutable"
+      }
+    ],
+    "generated_at": "2026-11-12T13:22:40.872399Z",
+    "input_fingerprint": "sha256:1666747af3b174c8b896268a314566c3ddb490d598674493b67711ee2591e8bd",
+    "metadata": {
+      "assessment_complete": true,
+      "deployment_plan": {
+        "application": {
+          "container_port": 8000,
+          "framework": "fastapi",
+          "health_path": "/health",
+          "health_route_evidence": [
+            {
+              "file": "app.py",
+              "line": 3,
+              "path": "/health"
+            }
+          ],
+          "health_runtime_verified": false,
+          "image_uri": null,
+          "kind": "http_service",
+          "start_command": [
+            "uvicorn",
+            "app:app",
+            "--host",
+            "0.0.0.0",
+            "--port",
+            "8000"
+          ],
+          "stateful": false
+        },
+        "release_policy": {
+          "execution_available": false,
+          "human_review_required": true
+        },
+        "revision": "223d013eee3e581c20572fc48b9b8440046c66ef35c74c353fe4ec82da30e548",
+        "safety_envelope": {
+          "cost_preview": {
+            "basis": "not quoted; AWS execution remains disabled",
+            "currency": "USD",
+            "monthly_usd": null
+          },
+          "estimated_monthly_usd": null,
+          "resources_created": [
+            "ecr_repository",
+            "ecs_express_service"
+          ],
+          "resources_deleted": [],
+          "resources_modified": [],
+          "stateful": false
+        },
+        "schema_version": "1.0",
+        "source": {
+          "fingerprint": "sha256:1666747af3b174c8b896268a314566c3ddb490d598674493b67711ee2591e8bd"
+        },
+        "status": "advisory_only",
+        "target": {
+          "adapter": "ecs_express",
+          "provider": "aws",
+          "region": "us-east-1",
+          "service_name": "mcp-products-qualification"
+        }
+      },
+      "inspection": {
+        "baseline_format": "inspector-instances-v1",
+        "bytes_read": 288,
+        "complete": true,
+        "entries_visited": 3,
+        "file_states": [
+          {
+            "family": "docker",
+            "path": "Dockerfile",
+            "state": "analyzed"
+          },
+          {
+            "family": "python",
+            "path": "app.py",
+            "state": "analyzed"
+          }
+        ],
+        "files_analyzed": 2,
+        "files_considered": 2,
+        "issues": [],
+        "notes": [],
+        "profile": "python-fastapi-container-v1",
+        "rule_states": {
+          "PR-CI-001": "not_applicable",
+          "PR-CI-002": "not_applicable",
+          "PR-DOCKER-001": "evaluated",
+          "PR-DOCKER-002": "evaluated",
+          "PR-DOCKER-003": "evaluated",
+          "PR-DOCKER-004": "evaluated",
+          "PR-FASTAPI-001": "evaluated",
+          "PR-FASTAPI-002": "evaluated",
+          "PR-PY-001": "evaluated",
+          "PR-SECRET-001": "not_applicable"
+        },
+        "ruleset_version": "2026.10.18.1",
+        "scope_fingerprint": "sha256:ad13b6b0b95e5489e52e6444264f9d26d087059b10169917838f1fd5a0bbf330",
+        "skipped_counts": {
+          "unsupported_file": 1
+        },
+        "verdict_meaning": "Findings and coverage for shipped static rules only; ready is not a production certification."
+      }
+    },
+    "product": "deployment-fixer",
+    "schema_version": "1.0",
+    "verdict": "plan_ready"
+  },
+  "billable": true,
+  "configuration_gaps": [
+    "image_uri"
+  ],
+  "coverage": {
+    "dockerfiles": 1,
+    "fastapi_detected": true,
+    "syntax_errors": false
+  },
+  "execution": "unavailable",
+  "infrastructure_cost": "unquoted",
+  "next_steps": [
+    "Review findings and deployment prerequisites.",
+    "Verify the image, start command, health route and required configuration.",
+    "Obtain a current infrastructure quote separately.",
+    "Apply any changes through your own reviewed deployment process."
+  ],
+  "prerequisites": [
+    {
+      "item": "Container image",
+      "status": "provide a reviewed immutable image identifier"
+    },
+    {
+      "item": "Task execution role",
+      "status": "not verified; have your AWS administrator review image-pull and logging permissions"
+    },
+    {
+      "item": "Infrastructure role",
+      "status": "not verified; review permissions for Express Mode infrastructure"
+    },
+    {
+      "item": "Region, networking and application configuration",
+      "status": "not verified; confirm availability, reachability, environment and secret references in your account"
+    },
+    {
+      "item": "Infrastructure budget",
+      "status": "unquoted; obtain a current estimate including supporting resources"
+    }
+  ],
+  "references": [
+    "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-overview.html",
+    "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-create-full.html"
+  ],
+  "review_checklist": [
+    "Confirm all relevant source/configuration was included and the stateless scope is accurate.",
+    "Review each finding against its file/line evidence.",
+    "Verify the start command, listening port and health route at runtime.",
+    "Review image provenance, IAM permissions, network access and secret handling.",
+    "Approve infrastructure costs and define monitoring, rollback and resource removal before making changes."
+  ],
+  "supported_complete": true,
+  "verdict": "plan_ready"
+}

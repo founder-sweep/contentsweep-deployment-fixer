@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "contentsweep-deployment-fixer": {
+      "command": "${env:CONTENTSWEEP_DEPLOYMENT_FIXER_MCP_COMMAND}",
+      "args": [],
+      "type": "stdio",
+      "disabled": false,
+      "autoApprove": [],
+      "timeout": 120
+    }
+  }
+}

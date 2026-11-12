@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "contentsweep-deployment-fixer": {
+      "url": "https://mcp.contentsweep.ai/v1/deployment-fixer/mcp/",
+      "headers": {
+        "X-API-Key": "${env:CONTENTSWEEP_DEPLOYMENT_FIXER_API_KEY}"
+      }
+    }
+  }
+}

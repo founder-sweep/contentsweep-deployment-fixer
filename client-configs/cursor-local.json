@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "contentsweep-deployment-fixer": {
+      "type": "stdio",
+      "command": "${env:CONTENTSWEEP_DEPLOYMENT_FIXER_MCP_COMMAND}",
+      "args": []
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "mcp": {
+    "contentsweep-deployment-fixer": {
+      "type": "local",
+      "command": [
+        "{env:CONTENTSWEEP_DEPLOYMENT_FIXER_MCP_COMMAND}"
+      ],
+      "enabled": true,
+      "timeout": 120000
+    }
+  }
+}

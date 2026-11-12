@@ -1,0 +1,11 @@
+{
+  "name": "contentsweep-deployment-fixer",
+  "version": "1.0.0",
+  "description": "Assess a stateless FastAPI container and prepare an advisory ECS Express plan.",
+  "author": {
+    "name": "Content Sweep LLC",
+    "email": "founder@contentsweep.ai"
+  },
+  "homepage": "https://mcp.contentsweep.ai/deployment-fixer",
+  "repository": "https://github.com/founder-sweep/contentsweep-deployment-fixer"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "contentsweep-deployment-fixer",
+  "version": "1.0.0",
+  "description": "Assess a stateless FastAPI container and prepare an advisory ECS Express plan.",
+  "author": {
+    "name": "Content Sweep LLC",
+    "email": "founder@contentsweep.ai"
+  },
+  "homepage": "https://mcp.contentsweep.ai/deployment-fixer",
+  "repository": "https://github.com/founder-sweep/contentsweep-deployment-fixer",
+  "license": "Apache-2.0",
+  "logo": "assets/contentsweep.svg",
+  "skills": [
+    "skills/review-fastapi-deployment"
+  ],
+  "keywords": [
+    "mcp",
+    "review-fastapi-deployment",
+    "contentsweep"
+  ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "CONTENTSWEEP_DEPLOYMENT_FIXER_API_KEY": {
+        "type": "string",
+        "title": "Verified organization API key for Deployment Fixer"
+      }
+    },
+    "required": [
+      "CONTENTSWEEP_DEPLOYMENT_FIXER_API_KEY"
+    ]
+  }
+}
