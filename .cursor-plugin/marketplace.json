@@ -1,0 +1,17 @@
+{
+  "name": "contentsweep-deployment-fixer",
+  "owner": {
+    "name": "Content Sweep LLC",
+    "email": "founder@contentsweep.ai"
+  },
+  "metadata": {
+    "description": "Assess a stateless FastAPI container and prepare an advisory ECS Express plan."
+  },
+  "plugins": [
+    {
+      "name": "contentsweep-deployment-fixer",
+      "source": "./",
+      "description": "Assess a stateless FastAPI container and prepare an advisory ECS Express plan."
+    }
+  ]
+}
