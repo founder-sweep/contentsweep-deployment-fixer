@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "title": "Deployment Fixer",
+  "repository": "contentsweep-deployment-fixer",
+  "plugin": "contentsweep-deployment-fixer",
+  "skill": "review-fastapi-deployment",
+  "skill_path": "skills/review-fastapi-deployment/SKILL.md",
+  "description": "Assess a stateless FastAPI container and prepare an advisory ECS Express plan.",
+  "homepage": "https://mcp.contentsweep.ai/deployment-fixer",
+  "mode": "hosted",
+  "endpoint": "https://mcp.contentsweep.ai/v1/deployment-fixer/mcp/",
+  "tools": 10,
+  "setting": "CONTENTSWEEP_DEPLOYMENT_FIXER_API_KEY",
+  "pricing": "Five trials per verified organization; $20/10 hosted plans. Free local tools. Supported completed assessments count even when blocked; unsupported/incomplete/platform failures do not.",
+  "scope": "Read-only bounded static FastAPI assessment. No imports, builds, cloud credentials, AWS execution, automatic fixes, runtime readiness assurance or infrastructure cost quote.",
+  "source": "reviewed-kit",
+  "kit": "deployment-fixer",
+  "local": {
+    "command": "deployfixer-mcp",
+    "module": "contentsweep_deployment_fixer.local_mcp",
+    "setting": "CONTENTSWEEP_DEPLOYMENT_FIXER_MCP_COMMAND",
+    "tools": 1,
+    "version": "1.0.0"
+  },
+  "connection_modes": [
+    "hosted",
+    "local"
+  ],
+  "required_settings": [
+    "CONTENTSWEEP_DEPLOYMENT_FIXER_API_KEY",
+    "CONTENTSWEEP_DEPLOYMENT_FIXER_MCP_COMMAND"
+  ],
+  "example_references": [
+    "examples/supported/bundle.json",
+    "examples/supported/report.json",
+    "examples/blocked/report.json",
+    "examples/stateful-unsupported/report.json"
+  ],
+  "artifact": {
+    "url": "https://mcp.contentsweep.ai/deployment-fixer/download",
+    "manifest_url": "https://mcp.contentsweep.ai/deployment-fixer/downloads/manifest.json",
+    "filename": "contentsweep_deployment_fixer-1.0.0-py3-none-any.whl",
+    "sha256": "702e96cfa7c3a2daa5fb4cbee4feecf776653026e7c5739cd107bf78a7b102ae",
+    "version": "1.0.0",
+    "python": ">=3.12",
+    "local_only": true
+  }
+}
