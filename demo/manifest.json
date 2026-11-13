@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "product": "deployment_fixer",
+  "title": "Find FastAPI deployment blockers before granting AWS access",
+  "task": "Compare blocked and supported static assessments. Show stateful input outside the hosted envelope; no builds or AWS actions occur.",
+  "synthetic": true,
+  "slug": "fastapi-assessment",
+  "url": "https://mcp.contentsweep.ai/deployment-fixer/demos/fastapi-assessment",
+  "default_mode": "hosted",
+  "modes": [
+    "hosted",
+    "local"
+  ],
+  "units": 2,
+  "setting": "CONTENTSWEEP_DEPLOYMENT_FIXER_API_KEY",
+  "endpoint": "https://mcp.contentsweep.ai/v1/deployment-fixer/mcp/",
+  "runtime_artifact": {
+    "url": "https://mcp.contentsweep.ai/deployment-fixer/download",
+    "manifest_url": "https://mcp.contentsweep.ai/deployment-fixer/downloads/manifest.json",
+    "filename": "contentsweep_deployment_fixer-1.0.0-py3-none-any.whl",
+    "sha256": "702e96cfa7c3a2daa5fb4cbee4feecf776653026e7c5739cd107bf78a7b102ae",
+    "version": "1.0.0",
+    "python": ">=3.12",
+    "local_only": true
+  },
+  "skill": "review-fastapi-deployment",
+  "repository": "https://github.com/founder-sweep/contentsweep-deployment-fixer",
+  "pricing": "Five trials per verified organization; $20/10 hosted plans. Free local tools. Supported completed assessments count even when blocked; unsupported/incomplete/platform failures do not.",
+  "scope": "Read-only bounded static FastAPI assessment. No imports, builds, cloud credentials, AWS execution, automatic fixes, runtime readiness assurance or infrastructure cost quote.",
+  "cases": [
+    "blocked",
+    "supported",
+    "stateful-unsupported"
+  ],
+  "campaign": "deployment-launch-v1",
+  "fixtures_sha256": {
+    "blocked/bundle.json": "8c35fe03371254d99948a9e26c0aff72564c66613ce8e87dad40f23e04ef22cc",
+    "blocked/report.json": "a6266de5c21ba24631543cc6f0394a0546104305a09cf7aa6431eeff2e1c2d00",
+    "blocked/source/Dockerfile": "df8e1824157253bf43ed45bc0100c0d9114c49ec616f742b9755219b730212a6",
+    "blocked/source/app.py": "6b364fa31c6a086b9e7f20e925a7d9b4a850167fb63fa1e0b747d01dd81b0ae2",
+    "blocked/source/requirements.txt": "e9af2913de609d1de45b2fbab270c5a77281543c4dab6d1dd182f221fd04f683",
+    "stateful-unsupported/bundle.json": "1adc8eebfb1cb32d623d25fd7134a71a1d8f3707e13be45b6147599901895fd1",
+    "stateful-unsupported/report.json": "a16c3953d98e1e72d7a4cdd6aec22d0fd84add699b8e3dbe26e35e8e0c9f13b1",
+    "stateful-unsupported/source/Dockerfile": "964c7c126cde9f80e91fd7c9d857d46ac56d9edc4876addd7fec4a20fb91f7b3",
+    "stateful-unsupported/source/app.py": "2cf24983749168bb49ee717b4cd81926627ba125933d719922ce177e7dc46c3d",
+    "stateful-unsupported/source/requirements.txt": "e9af2913de609d1de45b2fbab270c5a77281543c4dab6d1dd182f221fd04f683",
+    "supported/bundle.json": "811783a30f2802816d3f639572fb29e7b327622cf82a1909e338afc0cae99589",
+    "supported/report.json": "5acd50d362adcaf0a68e0075383d5e3a241537becec08a43be7f71938711abbe",
+    "supported/source/Dockerfile": "964c7c126cde9f80e91fd7c9d857d46ac56d9edc4876addd7fec4a20fb91f7b3",
+    "supported/source/app.py": "6b364fa31c6a086b9e7f20e925a7d9b4a850167fb63fa1e0b747d01dd81b0ae2",
+    "supported/source/requirements.txt": "e9af2913de609d1de45b2fbab270c5a77281543c4dab6d1dd182f221fd04f683"
+  },
+  "recorded_result": "passed deterministic MCP execution",
+  "agent_run": "passed",
+  "runner_sha256": "2376130d1534c3a3122eac183c1e01ec9da050de9ac6045b9d4c790bde572aae",
+  "expected_sha256": "11869b2c609d498a02fb2b8b5e4fe48e5d15cc73fca3a86f7279eba727bc80ab",
+  "recorded_at": "2026-11-13T16:12:48.932818+00:00",
+  "dependencies": {
+    "python": ">=3.12",
+    "mcp": ">=2.3,<3"
+  },
+  "source_provenance": {
+    "product_base_commit": "261d302bc012c26cbacbfca5d71ec80714fa4c92",
+    "distribution_base_commit": "f37a6edcf86ea4d2a4ce95fb4b6a3f6c0d8ab4ea",
+    "generator_sha256": "0b393f8d142a558d511da51de447e61711a77796cbfc37542bb191a43c2afae4"
+  },
+  "transfer_sha256": "125aede5160f1f291daa86d6f183d1faf5b470a2ed503f945e79af995d86bd2b",
+  "supplemental_sha256": {
+    "local-result.json": "c0b42a3222ce3001bb5fc97261e019e43923e1bd3aa84c2cc87d7e2612db4f03"
+  }
+}

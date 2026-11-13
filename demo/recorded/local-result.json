@@ -1,0 +1,569 @@
+{
+  "execution": "deterministic MCP client; not a native agent transcript",
+  "fixtures_sha256": {
+    "blocked/bundle.json": "8c35fe03371254d99948a9e26c0aff72564c66613ce8e87dad40f23e04ef22cc",
+    "blocked/report.json": "a6266de5c21ba24631543cc6f0394a0546104305a09cf7aa6431eeff2e1c2d00",
+    "blocked/source/Dockerfile": "df8e1824157253bf43ed45bc0100c0d9114c49ec616f742b9755219b730212a6",
+    "blocked/source/app.py": "6b364fa31c6a086b9e7f20e925a7d9b4a850167fb63fa1e0b747d01dd81b0ae2",
+    "blocked/source/requirements.txt": "e9af2913de609d1de45b2fbab270c5a77281543c4dab6d1dd182f221fd04f683",
+    "stateful-unsupported/bundle.json": "1adc8eebfb1cb32d623d25fd7134a71a1d8f3707e13be45b6147599901895fd1",
+    "stateful-unsupported/report.json": "a16c3953d98e1e72d7a4cdd6aec22d0fd84add699b8e3dbe26e35e8e0c9f13b1",
+    "stateful-unsupported/source/Dockerfile": "964c7c126cde9f80e91fd7c9d857d46ac56d9edc4876addd7fec4a20fb91f7b3",
+    "stateful-unsupported/source/app.py": "2cf24983749168bb49ee717b4cd81926627ba125933d719922ce177e7dc46c3d",
+    "stateful-unsupported/source/requirements.txt": "e9af2913de609d1de45b2fbab270c5a77281543c4dab6d1dd182f221fd04f683",
+    "supported/bundle.json": "811783a30f2802816d3f639572fb29e7b327622cf82a1909e338afc0cae99589",
+    "supported/report.json": "5acd50d362adcaf0a68e0075383d5e3a241537becec08a43be7f71938711abbe",
+    "supported/source/Dockerfile": "964c7c126cde9f80e91fd7c9d857d46ac56d9edc4876addd7fec4a20fb91f7b3",
+    "supported/source/app.py": "6b364fa31c6a086b9e7f20e925a7d9b4a850167fb63fa1e0b747d01dd81b0ae2",
+    "supported/source/requirements.txt": "e9af2913de609d1de45b2fbab270c5a77281543c4dab6d1dd182f221fd04f683"
+  },
+  "mode": "local",
+  "product": "deployment_fixer",
+  "result": {
+    "cases": [
+      {
+        "case": "stateful-unsupported",
+        "report": {
+          "coverage": {
+            "execution": "not_performed",
+            "repository": "analyzed",
+            "target": "ecs_express_planner"
+          },
+          "findings": [
+            {
+              "confidence": 1,
+              "evidence": [
+                {
+                  "excerpt": null,
+                  "fact": "An external FROM image lacks a valid sha256 digest.",
+                  "locator": "Dockerfile:1",
+                  "source": "repository"
+                }
+              ],
+              "id": "PR-DOCKER-001",
+              "metadata": {
+                "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+                "evidence_kind": "syntax",
+                "instance_id": "sha256:36f209d4dddbde23cae9f3c8546f5840bf46d6fba4f886360814661b4b8335f6",
+                "line": 1,
+                "path": "Dockerfile",
+                "rule_version": "2"
+              },
+              "origin": "deterministic",
+              "remediation": "Consider a reviewed sha256 digest and an explicit update process; tags can change.",
+              "severity": "medium",
+              "status": "open",
+              "title": "External base image is mutable"
+            },
+            {
+              "confidence": 1,
+              "evidence": [
+                {
+                  "excerpt": null,
+                  "fact": "stateful_or_external_dependency_detected",
+                  "locator": ".",
+                  "source": "repository"
+                }
+              ],
+              "id": "DF-SCOPE-001",
+              "metadata": {
+                
+              },
+              "origin": "deterministic",
+              "remediation": "Resolve the scope gap or provide a reviewed deployment adapter.",
+              "severity": "high",
+              "status": "open",
+              "title": "Repository is outside the safe stateless MVP envelope"
+            }
+          ],
+          "generated_at": "2026-11-13T15:07:20.054443Z",
+          "input_fingerprint": "sha256:b3cd89ad1279123a2ec5671ee47904cff6684fc3dd714aec68857cc52a38a3a1",
+          "metadata": {
+            "assessment_complete": true,
+            "deployment_plan": {
+              "application": {
+                "container_port": 8000,
+                "framework": "fastapi",
+                "health_path": "/health",
+                "health_route_evidence": [
+                  {
+                    "file": "app.py",
+                    "line": 3,
+                    "path": "/health"
+                  }
+                ],
+                "health_runtime_verified": false,
+                "image_uri": null,
+                "kind": "http_service",
+                "start_command": [
+                  "uvicorn",
+                  "app:app",
+                  "--host",
+                  "0.0.0.0",
+                  "--port",
+                  "8000"
+                ],
+                "stateful": true
+              },
+              "release_policy": {
+                "approval_required": true,
+                "rollback_on_failure": true
+              },
+              "revision": "sha256:951f5c434b96a696f0880f66b05c92052e771e1c1f25c732a0590c84d3daaa52",
+              "safety_envelope": {
+                "cost_preview": {
+                  "basis": "not quoted; AWS execution remains disabled",
+                  "currency": "USD",
+                  "monthly_usd": null
+                },
+                "estimated_monthly_usd": null,
+                "resources_created": [
+                  "ecr_repository",
+                  "ecs_express_service"
+                ],
+                "resources_deleted": [
+                  
+                ],
+                "resources_modified": [
+                  
+                ],
+                "stateful": true
+              },
+              "schema_version": "1.0",
+              "source": {
+                "fingerprint": "sha256:b3cd89ad1279123a2ec5671ee47904cff6684fc3dd714aec68857cc52a38a3a1",
+                "path": "DEMO_WORKSPACE/.mcp-products/product-demos-2026-11-13/packages/deployment_fixer/demo/fixtures/stateful-unsupported/source"
+              },
+              "status": "approval_required",
+              "target": {
+                "adapter": "ecs_express",
+                "provider": "aws",
+                "region": "us-east-1",
+                "service_name": "mcp-products-qualification"
+              }
+            },
+            "inspection": {
+              "baseline_format": "inspector-instances-v1",
+              "bytes_read": 304,
+              "complete": true,
+              "entries_visited": 3,
+              "file_states": [
+                {
+                  "family": "docker",
+                  "path": "Dockerfile",
+                  "state": "analyzed"
+                },
+                {
+                  "family": "python",
+                  "path": "app.py",
+                  "state": "analyzed"
+                }
+              ],
+              "files_analyzed": 2,
+              "files_considered": 2,
+              "issues": [
+                
+              ],
+              "notes": [
+                
+              ],
+              "profile": "python-fastapi-container-v1",
+              "rule_states": {
+                "PR-CI-001": "not_applicable",
+                "PR-CI-002": "not_applicable",
+                "PR-DOCKER-001": "evaluated",
+                "PR-DOCKER-002": "evaluated",
+                "PR-DOCKER-003": "evaluated",
+                "PR-DOCKER-004": "evaluated",
+                "PR-FASTAPI-001": "evaluated",
+                "PR-FASTAPI-002": "evaluated",
+                "PR-PY-001": "evaluated",
+                "PR-SECRET-001": "not_applicable"
+              },
+              "ruleset_version": "2026.10.18.1",
+              "scope_fingerprint": "sha256:ad13b6b0b95e5489e52e6444264f9d26d087059b10169917838f1fd5a0bbf330",
+              "skipped_counts": {
+                "unsupported_file": 1
+              },
+              "verdict_meaning": "Findings and coverage for shipped static rules only; ready is not a production certification."
+            }
+          },
+          "product": "deployment-fixer",
+          "schema_version": "1.0",
+          "verdict": "blocked"
+        }
+      },
+      {
+        "case": "blocked",
+        "report": {
+          "coverage": {
+            "execution": "not_performed",
+            "repository": "analyzed",
+            "target": "ecs_express_planner"
+          },
+          "findings": [
+            {
+              "confidence": 1,
+              "evidence": [
+                {
+                  "excerpt": null,
+                  "fact": "An external FROM image lacks a valid sha256 digest.",
+                  "locator": "Dockerfile:1",
+                  "source": "repository"
+                }
+              ],
+              "id": "PR-DOCKER-001",
+              "metadata": {
+                "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+                "evidence_kind": "syntax",
+                "instance_id": "sha256:36f209d4dddbde23cae9f3c8546f5840bf46d6fba4f886360814661b4b8335f6",
+                "line": 1,
+                "path": "Dockerfile",
+                "rule_version": "2"
+              },
+              "origin": "deterministic",
+              "remediation": "Consider a reviewed sha256 digest and an explicit update process; tags can change.",
+              "severity": "medium",
+              "status": "open",
+              "title": "External base image is mutable"
+            },
+            {
+              "confidence": 1,
+              "evidence": [
+                {
+                  "excerpt": null,
+                  "fact": "The final stage's effective explicit USER selects root/UID 0; inherited image defaults are not inspected.",
+                  "locator": "Dockerfile:8",
+                  "source": "repository"
+                }
+              ],
+              "id": "PR-DOCKER-002",
+              "metadata": {
+                "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+                "evidence_kind": "syntax",
+                "instance_id": "sha256:466df5fd23d1a79c6337a76e173813b307edf4f64729348f39648fb5ada7ae67",
+                "line": 8,
+                "path": "Dockerfile",
+                "rule_version": "2"
+              },
+              "origin": "deterministic",
+              "remediation": "Select a non-root runtime user where the application permits it.",
+              "severity": "medium",
+              "status": "open",
+              "title": "Final stage explicitly selects a root runtime user"
+            },
+            {
+              "confidence": 1,
+              "evidence": [
+                {
+                  "excerpt": null,
+                  "fact": "Final startup arguments invoke uvicorn with --reload.",
+                  "locator": "Dockerfile:7",
+                  "source": "repository"
+                }
+              ],
+              "id": "PR-DOCKER-004",
+              "metadata": {
+                "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+                "evidence_kind": "syntax",
+                "instance_id": "sha256:0bd6f520c959b1c8916655d61069e04c1bad8e91a6804567c8cb3cde16270baf",
+                "line": 7,
+                "path": "Dockerfile",
+                "rule_version": "1"
+              },
+              "origin": "deterministic",
+              "remediation": "Remove --reload from the production startup command.",
+              "severity": "high",
+              "status": "open",
+              "title": "Final startup enables Uvicorn reload"
+            }
+          ],
+          "generated_at": "2026-11-13T15:07:19.988372Z",
+          "input_fingerprint": "sha256:2531009f2b6c65319ffc629ef0535cc058acb81a20a8b848924f3c37bb37c59b",
+          "metadata": {
+            "assessment_complete": true,
+            "deployment_plan": {
+              "application": {
+                "container_port": 8000,
+                "framework": "fastapi",
+                "health_path": "/health",
+                "health_route_evidence": [
+                  {
+                    "file": "app.py",
+                    "line": 3,
+                    "path": "/health"
+                  }
+                ],
+                "health_runtime_verified": false,
+                "image_uri": null,
+                "kind": "http_service",
+                "start_command": [
+                  "uvicorn",
+                  "app:app",
+                  "--host",
+                  "0.0.0.0",
+                  "--port",
+                  "8000",
+                  "--reload"
+                ],
+                "stateful": false
+              },
+              "release_policy": {
+                "approval_required": true,
+                "rollback_on_failure": true
+              },
+              "revision": "sha256:99d7851a43b3d7c9750c64972f5f3bde6b93e435f3681773302761dda0ac452f",
+              "safety_envelope": {
+                "cost_preview": {
+                  "basis": "not quoted; AWS execution remains disabled",
+                  "currency": "USD",
+                  "monthly_usd": null
+                },
+                "estimated_monthly_usd": null,
+                "resources_created": [
+                  "ecr_repository",
+                  "ecs_express_service"
+                ],
+                "resources_deleted": [
+                  
+                ],
+                "resources_modified": [
+                  
+                ],
+                "stateful": false
+              },
+              "schema_version": "1.0",
+              "source": {
+                "fingerprint": "sha256:2531009f2b6c65319ffc629ef0535cc058acb81a20a8b848924f3c37bb37c59b",
+                "path": "DEMO_WORKSPACE/.mcp-products/product-demos-2026-11-13/packages/deployment_fixer/demo/fixtures/blocked/source"
+              },
+              "status": "approval_required",
+              "target": {
+                "adapter": "ecs_express",
+                "provider": "aws",
+                "region": "us-east-1",
+                "service_name": "mcp-products-qualification"
+              }
+            },
+            "inspection": {
+              "baseline_format": "inspector-instances-v1",
+              "bytes_read": 309,
+              "complete": true,
+              "entries_visited": 3,
+              "file_states": [
+                {
+                  "family": "docker",
+                  "path": "Dockerfile",
+                  "state": "analyzed"
+                },
+                {
+                  "family": "python",
+                  "path": "app.py",
+                  "state": "analyzed"
+                }
+              ],
+              "files_analyzed": 2,
+              "files_considered": 2,
+              "issues": [
+                
+              ],
+              "notes": [
+                
+              ],
+              "profile": "python-fastapi-container-v1",
+              "rule_states": {
+                "PR-CI-001": "not_applicable",
+                "PR-CI-002": "not_applicable",
+                "PR-DOCKER-001": "evaluated",
+                "PR-DOCKER-002": "evaluated",
+                "PR-DOCKER-003": "evaluated",
+                "PR-DOCKER-004": "evaluated",
+                "PR-FASTAPI-001": "evaluated",
+                "PR-FASTAPI-002": "evaluated",
+                "PR-PY-001": "evaluated",
+                "PR-SECRET-001": "not_applicable"
+              },
+              "ruleset_version": "2026.10.18.1",
+              "scope_fingerprint": "sha256:ad13b6b0b95e5489e52e6444264f9d26d087059b10169917838f1fd5a0bbf330",
+              "skipped_counts": {
+                "unsupported_file": 1
+              },
+              "verdict_meaning": "Findings and coverage for shipped static rules only; ready is not a production certification."
+            }
+          },
+          "product": "deployment-fixer",
+          "schema_version": "1.0",
+          "verdict": "blocked"
+        }
+      },
+      {
+        "case": "supported",
+        "report": {
+          "coverage": {
+            "execution": "not_performed",
+            "repository": "analyzed",
+            "target": "ecs_express_planner"
+          },
+          "findings": [
+            {
+              "confidence": 1,
+              "evidence": [
+                {
+                  "excerpt": null,
+                  "fact": "An external FROM image lacks a valid sha256 digest.",
+                  "locator": "Dockerfile:1",
+                  "source": "repository"
+                }
+              ],
+              "id": "PR-DOCKER-001",
+              "metadata": {
+                "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+                "evidence_kind": "syntax",
+                "instance_id": "sha256:36f209d4dddbde23cae9f3c8546f5840bf46d6fba4f886360814661b4b8335f6",
+                "line": 1,
+                "path": "Dockerfile",
+                "rule_version": "2"
+              },
+              "origin": "deterministic",
+              "remediation": "Consider a reviewed sha256 digest and an explicit update process; tags can change.",
+              "severity": "medium",
+              "status": "open",
+              "title": "External base image is mutable"
+            }
+          ],
+          "generated_at": "2026-11-13T15:07:20.021742Z",
+          "input_fingerprint": "sha256:1666747af3b174c8b896268a314566c3ddb490d598674493b67711ee2591e8bd",
+          "metadata": {
+            "assessment_complete": true,
+            "deployment_plan": {
+              "application": {
+                "container_port": 8000,
+                "framework": "fastapi",
+                "health_path": "/health",
+                "health_route_evidence": [
+                  {
+                    "file": "app.py",
+                    "line": 3,
+                    "path": "/health"
+                  }
+                ],
+                "health_runtime_verified": false,
+                "image_uri": null,
+                "kind": "http_service",
+                "start_command": [
+                  "uvicorn",
+                  "app:app",
+                  "--host",
+                  "0.0.0.0",
+                  "--port",
+                  "8000"
+                ],
+                "stateful": false
+              },
+              "release_policy": {
+                "approval_required": true,
+                "rollback_on_failure": true
+              },
+              "revision": "sha256:ebc09ff4feca460988cd169ad4b7bc6166b3582806c5324d9de8ad03f0a11c88",
+              "safety_envelope": {
+                "cost_preview": {
+                  "basis": "not quoted; AWS execution remains disabled",
+                  "currency": "USD",
+                  "monthly_usd": null
+                },
+                "estimated_monthly_usd": null,
+                "resources_created": [
+                  "ecr_repository",
+                  "ecs_express_service"
+                ],
+                "resources_deleted": [
+                  
+                ],
+                "resources_modified": [
+                  
+                ],
+                "stateful": false
+              },
+              "schema_version": "1.0",
+              "source": {
+                "fingerprint": "sha256:1666747af3b174c8b896268a314566c3ddb490d598674493b67711ee2591e8bd",
+                "path": "DEMO_WORKSPACE/.mcp-products/product-demos-2026-11-13/packages/deployment_fixer/demo/fixtures/supported/source"
+              },
+              "status": "approval_required",
+              "target": {
+                "adapter": "ecs_express",
+                "provider": "aws",
+                "region": "us-east-1",
+                "service_name": "mcp-products-qualification"
+              }
+            },
+            "inspection": {
+              "baseline_format": "inspector-instances-v1",
+              "bytes_read": 288,
+              "complete": true,
+              "entries_visited": 3,
+              "file_states": [
+                {
+                  "family": "docker",
+                  "path": "Dockerfile",
+                  "state": "analyzed"
+                },
+                {
+                  "family": "python",
+                  "path": "app.py",
+                  "state": "analyzed"
+                }
+              ],
+              "files_analyzed": 2,
+              "files_considered": 2,
+              "issues": [
+                
+              ],
+              "notes": [
+                
+              ],
+              "profile": "python-fastapi-container-v1",
+              "rule_states": {
+                "PR-CI-001": "not_applicable",
+                "PR-CI-002": "not_applicable",
+                "PR-DOCKER-001": "evaluated",
+                "PR-DOCKER-002": "evaluated",
+                "PR-DOCKER-003": "evaluated",
+                "PR-DOCKER-004": "evaluated",
+                "PR-FASTAPI-001": "evaluated",
+                "PR-FASTAPI-002": "evaluated",
+                "PR-PY-001": "evaluated",
+                "PR-SECRET-001": "not_applicable"
+              },
+              "ruleset_version": "2026.10.18.1",
+              "scope_fingerprint": "sha256:ad13b6b0b95e5489e52e6444264f9d26d087059b10169917838f1fd5a0bbf330",
+              "skipped_counts": {
+                "unsupported_file": 1
+              },
+              "verdict_meaning": "Findings and coverage for shipped static rules only; ready is not a production certification."
+            }
+          },
+          "product": "deployment-fixer",
+          "schema_version": "1.0",
+          "verdict": "plan_ready"
+        }
+      }
+    ],
+    "cloud_actions": 0,
+    "mode": "local",
+    "target_code_executed": false
+  },
+  "server": {
+    "description": null,
+    "icons": null,
+    "name": "contentsweep-deployment-fixer-local",
+    "title": null,
+    "version": "1.0.0",
+    "website_url": null
+  },
+  "status": "passed",
+  "synthetic": true,
+  "tools": [
+    "plan_deployment_readonly"
+  ]
+}

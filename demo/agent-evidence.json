@@ -1,0 +1,33 @@
+{
+  "product": "deployment_fixer",
+  "status": "passed",
+  "reason": null,
+  "client": "Gemini CLI",
+  "client_version": "0.68.0",
+  "models_observed": [
+    "gemini-3.5-flash-lite"
+  ],
+  "assertions": [
+    "supported and stop reports read through MCP",
+    "expected evidence findings",
+    "zero-debit unsupported/incomplete result",
+    "same-key retry",
+    "no production connection or cloud actions"
+  ],
+  "synthetic": true,
+  "internal_noncash": true,
+  "customer_outcome": false,
+  "native_mcp_tool_counts": {
+    "deployment_fixer_wallet": 2,
+    "upload_deployment_bundle": 4,
+    "preview_deployment_bundle": 3,
+    "quote_deployment_plan": 3,
+    "start_deployment_plan": 4,
+    "get_deployment_plan": 6,
+    "read_deployment_report": 3
+  },
+  "logs_sha256": {
+    "gemini-deployment_fixer-native.jsonl": "e85de96c1e55cccf096a695a07255a141788de9ea57f9fcfecdf49d0875a0b5e"
+  },
+  "transport_note": "Native MCP workflow; exact fixture transfer may use a reviewed native shell helper. Deterministic byte checks are recorded separately."
+}

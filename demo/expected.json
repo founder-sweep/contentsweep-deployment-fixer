@@ -1,0 +1,804 @@
+{
+  "evidence_kind": "Recorded deterministic MCP execution of owned synthetic fixtures; not a customer outcome",
+  "execution": "deterministic MCP client; not a native agent transcript",
+  "fixtures_sha256": {
+    "blocked/bundle.json": "8c35fe03371254d99948a9e26c0aff72564c66613ce8e87dad40f23e04ef22cc",
+    "blocked/report.json": "a6266de5c21ba24631543cc6f0394a0546104305a09cf7aa6431eeff2e1c2d00",
+    "blocked/source/Dockerfile": "df8e1824157253bf43ed45bc0100c0d9114c49ec616f742b9755219b730212a6",
+    "blocked/source/app.py": "6b364fa31c6a086b9e7f20e925a7d9b4a850167fb63fa1e0b747d01dd81b0ae2",
+    "blocked/source/requirements.txt": "e9af2913de609d1de45b2fbab270c5a77281543c4dab6d1dd182f221fd04f683",
+    "stateful-unsupported/bundle.json": "1adc8eebfb1cb32d623d25fd7134a71a1d8f3707e13be45b6147599901895fd1",
+    "stateful-unsupported/report.json": "a16c3953d98e1e72d7a4cdd6aec22d0fd84add699b8e3dbe26e35e8e0c9f13b1",
+    "stateful-unsupported/source/Dockerfile": "964c7c126cde9f80e91fd7c9d857d46ac56d9edc4876addd7fec4a20fb91f7b3",
+    "stateful-unsupported/source/app.py": "2cf24983749168bb49ee717b4cd81926627ba125933d719922ce177e7dc46c3d",
+    "stateful-unsupported/source/requirements.txt": "e9af2913de609d1de45b2fbab270c5a77281543c4dab6d1dd182f221fd04f683",
+    "supported/bundle.json": "811783a30f2802816d3f639572fb29e7b327622cf82a1909e338afc0cae99589",
+    "supported/report.json": "5acd50d362adcaf0a68e0075383d5e3a241537becec08a43be7f71938711abbe",
+    "supported/source/Dockerfile": "964c7c126cde9f80e91fd7c9d857d46ac56d9edc4876addd7fec4a20fb91f7b3",
+    "supported/source/app.py": "6b364fa31c6a086b9e7f20e925a7d9b4a850167fb63fa1e0b747d01dd81b0ae2",
+    "supported/source/requirements.txt": "e9af2913de609d1de45b2fbab270c5a77281543c4dab6d1dd182f221fd04f683"
+  },
+  "internal_noncash_qualification": true,
+  "mode": "hosted",
+  "original_result_sha256": "c7b95f252741b4ef1260f1b92db5c694d7ee1ec05a8d16fc07aa417c78132b6a",
+  "product": "deployment_fixer",
+  "recorded_at": "2026-11-13T16:12:48.932818+00:00",
+  "result": {
+    "cases": [
+      {
+        "case": "stateful-unsupported",
+        "receipt": {
+          "artifacts": {
+            "json": "b9951ba799f0b60112c2ee3eed118a705b7e60b6423f6576ebab35101407da79"
+          },
+          "billing_mode": "live",
+          "completed": 17945824617878325e-7,
+          "engine": "6f21b5d277c4d642943d007c1e55e407a2f8a45a82ebc11160b70ece22b84612",
+          "input_fingerprint": "69b7ec6441bf0a6f07dba340fe0268c58abece5bfa5cb1d75feb48744c357641",
+          "job_id": "artifact_job_b541e572d738f1d92f98d6ec15730c3c9205e58257413b6928871e0ec6d2807b",
+          "product": "deployment-fixer",
+          "units_consumed": 0
+        },
+        "report": {
+          "advisory_steps": [
+            "Resolve the evidence-linked findings and configuration gaps.",
+            "Build, test and publish the container through your own trusted process.",
+            "Review the image, task execution role, infrastructure role and service configuration with your AWS administrator.",
+            "Use your own approved deployment process to create an ECS Express Mode service; this product performs no changes."
+          ],
+          "assessment": {
+            "coverage": {
+              "execution": "not_performed",
+              "repository": "analyzed",
+              "target": "ecs_express_planner"
+            },
+            "findings": [
+              {
+                "confidence": 1,
+                "evidence": [
+                  {
+                    "excerpt": null,
+                    "fact": "An external FROM image lacks a valid sha256 digest.",
+                    "locator": "Dockerfile:1",
+                    "source": "repository"
+                  }
+                ],
+                "id": "PR-DOCKER-001",
+                "metadata": {
+                  "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+                  "evidence_kind": "syntax",
+                  "instance_id": "sha256:36f209d4dddbde23cae9f3c8546f5840bf46d6fba4f886360814661b4b8335f6",
+                  "line": 1,
+                  "path": "Dockerfile",
+                  "rule_version": "2"
+                },
+                "origin": "deterministic",
+                "remediation": "Consider a reviewed sha256 digest and an explicit update process; tags can change.",
+                "severity": "medium",
+                "status": "open",
+                "title": "External base image is mutable"
+              },
+              {
+                "confidence": 1,
+                "evidence": [
+                  {
+                    "excerpt": null,
+                    "fact": "stateful_or_external_dependency_detected",
+                    "locator": ".",
+                    "source": "repository"
+                  }
+                ],
+                "id": "DF-SCOPE-001",
+                "metadata": {
+                  
+                },
+                "origin": "deterministic",
+                "remediation": "Resolve the scope gap or provide a reviewed deployment adapter.",
+                "severity": "high",
+                "status": "open",
+                "title": "Repository is outside the safe stateless MVP envelope"
+              }
+            ],
+            "generated_at": "2026-11-13T15:07:41.769084Z",
+            "input_fingerprint": "sha256:b3cd89ad1279123a2ec5671ee47904cff6684fc3dd714aec68857cc52a38a3a1",
+            "metadata": {
+              "assessment_complete": true,
+              "deployment_plan": {
+                "application": {
+                  "container_port": 8000,
+                  "framework": "fastapi",
+                  "health_path": "/health",
+                  "health_route_evidence": [
+                    {
+                      "file": "app.py",
+                      "line": 3,
+                      "path": "/health"
+                    }
+                  ],
+                  "health_runtime_verified": false,
+                  "image_uri": null,
+                  "kind": "http_service",
+                  "start_command": [
+                    "uvicorn",
+                    "app:app",
+                    "--host",
+                    "0.0.0.0",
+                    "--port",
+                    "8000"
+                  ],
+                  "stateful": true
+                },
+                "release_policy": {
+                  "execution_available": false,
+                  "human_review_required": true
+                },
+                "revision": "5bb15069de311b18ee323cf219119cbcd15087e135f6e8794aaba01a38cd9c47",
+                "safety_envelope": {
+                  "cost_preview": {
+                    "basis": "not quoted; AWS execution remains disabled",
+                    "currency": "USD",
+                    "monthly_usd": null
+                  },
+                  "estimated_monthly_usd": null,
+                  "resources_created": [
+                    "ecr_repository",
+                    "ecs_express_service"
+                  ],
+                  "resources_deleted": [
+                    
+                  ],
+                  "resources_modified": [
+                    
+                  ],
+                  "stateful": true
+                },
+                "schema_version": "1.0",
+                "source": {
+                  "fingerprint": "sha256:b3cd89ad1279123a2ec5671ee47904cff6684fc3dd714aec68857cc52a38a3a1"
+                },
+                "status": "advisory_only",
+                "target": {
+                  "adapter": "ecs_express",
+                  "provider": "aws",
+                  "region": "us-east-1",
+                  "service_name": "mcp-products-qualification"
+                }
+              },
+              "inspection": {
+                "baseline_format": "inspector-instances-v1",
+                "bytes_read": 304,
+                "complete": true,
+                "entries_visited": 3,
+                "file_states": [
+                  {
+                    "family": "docker",
+                    "path": "Dockerfile",
+                    "state": "analyzed"
+                  },
+                  {
+                    "family": "python",
+                    "path": "app.py",
+                    "state": "analyzed"
+                  }
+                ],
+                "files_analyzed": 2,
+                "files_considered": 2,
+                "issues": [
+                  
+                ],
+                "notes": [
+                  
+                ],
+                "profile": "python-fastapi-container-v1",
+                "rule_states": {
+                  "PR-CI-001": "not_applicable",
+                  "PR-CI-002": "not_applicable",
+                  "PR-DOCKER-001": "evaluated",
+                  "PR-DOCKER-002": "evaluated",
+                  "PR-DOCKER-003": "evaluated",
+                  "PR-DOCKER-004": "evaluated",
+                  "PR-FASTAPI-001": "evaluated",
+                  "PR-FASTAPI-002": "evaluated",
+                  "PR-PY-001": "evaluated",
+                  "PR-SECRET-001": "not_applicable"
+                },
+                "ruleset_version": "2026.10.18.1",
+                "scope_fingerprint": "sha256:ad13b6b0b95e5489e52e6444264f9d26d087059b10169917838f1fd5a0bbf330",
+                "skipped_counts": {
+                  "unsupported_file": 1
+                },
+                "verdict_meaning": "Findings and coverage for shipped static rules only; ready is not a production certification."
+              }
+            },
+            "product": "deployment-fixer",
+            "schema_version": "1.0",
+            "verdict": "blocked"
+          },
+          "billable": false,
+          "configuration_gaps": [
+            "image_uri"
+          ],
+          "coverage": {
+            "dockerfiles": 1,
+            "fastapi_detected": true,
+            "syntax_errors": false
+          },
+          "engine": "6f21b5d277c4d642943d007c1e55e407a2f8a45a82ebc11160b70ece22b84612",
+          "execution": "unavailable",
+          "infrastructure_cost": "unquoted",
+          "input_fingerprint": "69b7ec6441bf0a6f07dba340fe0268c58abece5bfa5cb1d75feb48744c357641",
+          "next_steps": [
+            "Review findings and deployment prerequisites.",
+            "Verify the image, start command, health route and required configuration.",
+            "Obtain a current infrastructure quote separately.",
+            "Apply any changes through your own reviewed deployment process."
+          ],
+          "prerequisites": [
+            {
+              "item": "Container image",
+              "status": "provide a reviewed immutable image identifier"
+            },
+            {
+              "item": "Task execution role",
+              "status": "not verified; have your AWS administrator review image-pull and logging permissions"
+            },
+            {
+              "item": "Infrastructure role",
+              "status": "not verified; review permissions for Express Mode infrastructure"
+            },
+            {
+              "item": "Region, networking and application configuration",
+              "status": "not verified; confirm availability, reachability, environment and secret references in your account"
+            },
+            {
+              "item": "Infrastructure budget",
+              "status": "unquoted; obtain a current estimate including supporting resources"
+            }
+          ],
+          "product": "deployment-fixer",
+          "references": [
+            "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-overview.html",
+            "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-create-full.html"
+          ],
+          "review_checklist": [
+            "Confirm all relevant source/configuration was included and the stateless scope is accurate.",
+            "Review each finding against its file/line evidence.",
+            "Verify the start command, listening port and health route at runtime.",
+            "Review image provenance, IAM permissions, network access and secret handling.",
+            "Approve infrastructure costs and define monitoring, rollback and resource removal before making changes."
+          ],
+          "supported_complete": false,
+          "verdict": "unsupported"
+        }
+      },
+      {
+        "case": "blocked",
+        "receipt": {
+          "artifacts": {
+            "json": "5e12c4900e9abbf93c955f39d9adb7f81492feb2f305d0048550335ef963ff0b"
+          },
+          "billing_mode": "live",
+          "completed": 17945824478725424e-7,
+          "engine": "6f21b5d277c4d642943d007c1e55e407a2f8a45a82ebc11160b70ece22b84612",
+          "input_fingerprint": "7cc2bdcbaa199eaac0d34e1f03410ee15953f8460525be37fb78b2b95a23d712",
+          "job_id": "artifact_job_479acf1d9b5b2f4a74b1615522fe68b5f01812f2af1d0cc0eb6bedb52627b55b",
+          "product": "deployment-fixer",
+          "units_consumed": 1
+        },
+        "report": {
+          "advisory_steps": [
+            "Resolve the evidence-linked findings and configuration gaps.",
+            "Build, test and publish the container through your own trusted process.",
+            "Review the image, task execution role, infrastructure role and service configuration with your AWS administrator.",
+            "Use your own approved deployment process to create an ECS Express Mode service; this product performs no changes."
+          ],
+          "assessment": {
+            "coverage": {
+              "execution": "not_performed",
+              "repository": "analyzed",
+              "target": "ecs_express_planner"
+            },
+            "findings": [
+              {
+                "confidence": 1,
+                "evidence": [
+                  {
+                    "excerpt": null,
+                    "fact": "An external FROM image lacks a valid sha256 digest.",
+                    "locator": "Dockerfile:1",
+                    "source": "repository"
+                  }
+                ],
+                "id": "PR-DOCKER-001",
+                "metadata": {
+                  "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+                  "evidence_kind": "syntax",
+                  "instance_id": "sha256:36f209d4dddbde23cae9f3c8546f5840bf46d6fba4f886360814661b4b8335f6",
+                  "line": 1,
+                  "path": "Dockerfile",
+                  "rule_version": "2"
+                },
+                "origin": "deterministic",
+                "remediation": "Consider a reviewed sha256 digest and an explicit update process; tags can change.",
+                "severity": "medium",
+                "status": "open",
+                "title": "External base image is mutable"
+              },
+              {
+                "confidence": 1,
+                "evidence": [
+                  {
+                    "excerpt": null,
+                    "fact": "The final stage's effective explicit USER selects root/UID 0; inherited image defaults are not inspected.",
+                    "locator": "Dockerfile:8",
+                    "source": "repository"
+                  }
+                ],
+                "id": "PR-DOCKER-002",
+                "metadata": {
+                  "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+                  "evidence_kind": "syntax",
+                  "instance_id": "sha256:466df5fd23d1a79c6337a76e173813b307edf4f64729348f39648fb5ada7ae67",
+                  "line": 8,
+                  "path": "Dockerfile",
+                  "rule_version": "2"
+                },
+                "origin": "deterministic",
+                "remediation": "Select a non-root runtime user where the application permits it.",
+                "severity": "medium",
+                "status": "open",
+                "title": "Final stage explicitly selects a root runtime user"
+              },
+              {
+                "confidence": 1,
+                "evidence": [
+                  {
+                    "excerpt": null,
+                    "fact": "Final startup arguments invoke uvicorn with --reload.",
+                    "locator": "Dockerfile:7",
+                    "source": "repository"
+                  }
+                ],
+                "id": "PR-DOCKER-004",
+                "metadata": {
+                  "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+                  "evidence_kind": "syntax",
+                  "instance_id": "sha256:0bd6f520c959b1c8916655d61069e04c1bad8e91a6804567c8cb3cde16270baf",
+                  "line": 7,
+                  "path": "Dockerfile",
+                  "rule_version": "1"
+                },
+                "origin": "deterministic",
+                "remediation": "Remove --reload from the production startup command.",
+                "severity": "high",
+                "status": "open",
+                "title": "Final startup enables Uvicorn reload"
+              }
+            ],
+            "generated_at": "2026-11-13T15:07:27.852914Z",
+            "input_fingerprint": "sha256:2531009f2b6c65319ffc629ef0535cc058acb81a20a8b848924f3c37bb37c59b",
+            "metadata": {
+              "assessment_complete": true,
+              "deployment_plan": {
+                "application": {
+                  "container_port": 8000,
+                  "framework": "fastapi",
+                  "health_path": "/health",
+                  "health_route_evidence": [
+                    {
+                      "file": "app.py",
+                      "line": 3,
+                      "path": "/health"
+                    }
+                  ],
+                  "health_runtime_verified": false,
+                  "image_uri": null,
+                  "kind": "http_service",
+                  "start_command": [
+                    "uvicorn",
+                    "app:app",
+                    "--host",
+                    "0.0.0.0",
+                    "--port",
+                    "8000",
+                    "--reload"
+                  ],
+                  "stateful": false
+                },
+                "release_policy": {
+                  "execution_available": false,
+                  "human_review_required": true
+                },
+                "revision": "4b888f312f85b30169c0443ae9154b856fbbce0c2cc878fde6845da21ec9d17a",
+                "safety_envelope": {
+                  "cost_preview": {
+                    "basis": "not quoted; AWS execution remains disabled",
+                    "currency": "USD",
+                    "monthly_usd": null
+                  },
+                  "estimated_monthly_usd": null,
+                  "resources_created": [
+                    "ecr_repository",
+                    "ecs_express_service"
+                  ],
+                  "resources_deleted": [
+                    
+                  ],
+                  "resources_modified": [
+                    
+                  ],
+                  "stateful": false
+                },
+                "schema_version": "1.0",
+                "source": {
+                  "fingerprint": "sha256:2531009f2b6c65319ffc629ef0535cc058acb81a20a8b848924f3c37bb37c59b"
+                },
+                "status": "advisory_only",
+                "target": {
+                  "adapter": "ecs_express",
+                  "provider": "aws",
+                  "region": "us-east-1",
+                  "service_name": "mcp-products-qualification"
+                }
+              },
+              "inspection": {
+                "baseline_format": "inspector-instances-v1",
+                "bytes_read": 309,
+                "complete": true,
+                "entries_visited": 3,
+                "file_states": [
+                  {
+                    "family": "docker",
+                    "path": "Dockerfile",
+                    "state": "analyzed"
+                  },
+                  {
+                    "family": "python",
+                    "path": "app.py",
+                    "state": "analyzed"
+                  }
+                ],
+                "files_analyzed": 2,
+                "files_considered": 2,
+                "issues": [
+                  
+                ],
+                "notes": [
+                  
+                ],
+                "profile": "python-fastapi-container-v1",
+                "rule_states": {
+                  "PR-CI-001": "not_applicable",
+                  "PR-CI-002": "not_applicable",
+                  "PR-DOCKER-001": "evaluated",
+                  "PR-DOCKER-002": "evaluated",
+                  "PR-DOCKER-003": "evaluated",
+                  "PR-DOCKER-004": "evaluated",
+                  "PR-FASTAPI-001": "evaluated",
+                  "PR-FASTAPI-002": "evaluated",
+                  "PR-PY-001": "evaluated",
+                  "PR-SECRET-001": "not_applicable"
+                },
+                "ruleset_version": "2026.10.18.1",
+                "scope_fingerprint": "sha256:ad13b6b0b95e5489e52e6444264f9d26d087059b10169917838f1fd5a0bbf330",
+                "skipped_counts": {
+                  "unsupported_file": 1
+                },
+                "verdict_meaning": "Findings and coverage for shipped static rules only; ready is not a production certification."
+              }
+            },
+            "product": "deployment-fixer",
+            "schema_version": "1.0",
+            "verdict": "blocked"
+          },
+          "billable": true,
+          "configuration_gaps": [
+            "image_uri"
+          ],
+          "coverage": {
+            "dockerfiles": 1,
+            "fastapi_detected": true,
+            "syntax_errors": false
+          },
+          "engine": "6f21b5d277c4d642943d007c1e55e407a2f8a45a82ebc11160b70ece22b84612",
+          "execution": "unavailable",
+          "infrastructure_cost": "unquoted",
+          "input_fingerprint": "7cc2bdcbaa199eaac0d34e1f03410ee15953f8460525be37fb78b2b95a23d712",
+          "next_steps": [
+            "Review findings and deployment prerequisites.",
+            "Verify the image, start command, health route and required configuration.",
+            "Obtain a current infrastructure quote separately.",
+            "Apply any changes through your own reviewed deployment process."
+          ],
+          "prerequisites": [
+            {
+              "item": "Container image",
+              "status": "provide a reviewed immutable image identifier"
+            },
+            {
+              "item": "Task execution role",
+              "status": "not verified; have your AWS administrator review image-pull and logging permissions"
+            },
+            {
+              "item": "Infrastructure role",
+              "status": "not verified; review permissions for Express Mode infrastructure"
+            },
+            {
+              "item": "Region, networking and application configuration",
+              "status": "not verified; confirm availability, reachability, environment and secret references in your account"
+            },
+            {
+              "item": "Infrastructure budget",
+              "status": "unquoted; obtain a current estimate including supporting resources"
+            }
+          ],
+          "product": "deployment-fixer",
+          "references": [
+            "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-overview.html",
+            "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-create-full.html"
+          ],
+          "review_checklist": [
+            "Confirm all relevant source/configuration was included and the stateless scope is accurate.",
+            "Review each finding against its file/line evidence.",
+            "Verify the start command, listening port and health route at runtime.",
+            "Review image provenance, IAM permissions, network access and secret handling.",
+            "Approve infrastructure costs and define monitoring, rollback and resource removal before making changes."
+          ],
+          "supported_complete": true,
+          "verdict": "blocked"
+        }
+      },
+      {
+        "case": "supported",
+        "receipt": {
+          "artifacts": {
+            "json": "2591369628a5d812928a79be58fbc2ba9b3eb8a72e35eebde40329b711cfb259"
+          },
+          "billing_mode": "live",
+          "completed": 1794582454857993e-6,
+          "engine": "6f21b5d277c4d642943d007c1e55e407a2f8a45a82ebc11160b70ece22b84612",
+          "input_fingerprint": "90c78cdae7b5d49676a8246b95d23c475edfe6503afe20c0aaf03e8e27168b76",
+          "job_id": "artifact_job_08cdd444d2f2fab0bad7a880350f1737bd8299e02a924de11b7cbc1fb22d25d6",
+          "product": "deployment-fixer",
+          "units_consumed": 1
+        },
+        "report": {
+          "advisory_steps": [
+            "Resolve the evidence-linked findings and configuration gaps.",
+            "Build, test and publish the container through your own trusted process.",
+            "Review the image, task execution role, infrastructure role and service configuration with your AWS administrator.",
+            "Use your own approved deployment process to create an ECS Express Mode service; this product performs no changes."
+          ],
+          "assessment": {
+            "coverage": {
+              "execution": "not_performed",
+              "repository": "analyzed",
+              "target": "ecs_express_planner"
+            },
+            "findings": [
+              {
+                "confidence": 1,
+                "evidence": [
+                  {
+                    "excerpt": null,
+                    "fact": "An external FROM image lacks a valid sha256 digest.",
+                    "locator": "Dockerfile:1",
+                    "source": "repository"
+                  }
+                ],
+                "id": "PR-DOCKER-001",
+                "metadata": {
+                  "confidence_meaning": "deterministic evidence extraction; not a probability of production failure",
+                  "evidence_kind": "syntax",
+                  "instance_id": "sha256:36f209d4dddbde23cae9f3c8546f5840bf46d6fba4f886360814661b4b8335f6",
+                  "line": 1,
+                  "path": "Dockerfile",
+                  "rule_version": "2"
+                },
+                "origin": "deterministic",
+                "remediation": "Consider a reviewed sha256 digest and an explicit update process; tags can change.",
+                "severity": "medium",
+                "status": "open",
+                "title": "External base image is mutable"
+              }
+            ],
+            "generated_at": "2026-11-13T15:07:34.835486Z",
+            "input_fingerprint": "sha256:1666747af3b174c8b896268a314566c3ddb490d598674493b67711ee2591e8bd",
+            "metadata": {
+              "assessment_complete": true,
+              "deployment_plan": {
+                "application": {
+                  "container_port": 8000,
+                  "framework": "fastapi",
+                  "health_path": "/health",
+                  "health_route_evidence": [
+                    {
+                      "file": "app.py",
+                      "line": 3,
+                      "path": "/health"
+                    }
+                  ],
+                  "health_runtime_verified": false,
+                  "image_uri": null,
+                  "kind": "http_service",
+                  "start_command": [
+                    "uvicorn",
+                    "app:app",
+                    "--host",
+                    "0.0.0.0",
+                    "--port",
+                    "8000"
+                  ],
+                  "stateful": false
+                },
+                "release_policy": {
+                  "execution_available": false,
+                  "human_review_required": true
+                },
+                "revision": "223d013eee3e581c20572fc48b9b8440046c66ef35c74c353fe4ec82da30e548",
+                "safety_envelope": {
+                  "cost_preview": {
+                    "basis": "not quoted; AWS execution remains disabled",
+                    "currency": "USD",
+                    "monthly_usd": null
+                  },
+                  "estimated_monthly_usd": null,
+                  "resources_created": [
+                    "ecr_repository",
+                    "ecs_express_service"
+                  ],
+                  "resources_deleted": [
+                    
+                  ],
+                  "resources_modified": [
+                    
+                  ],
+                  "stateful": false
+                },
+                "schema_version": "1.0",
+                "source": {
+                  "fingerprint": "sha256:1666747af3b174c8b896268a314566c3ddb490d598674493b67711ee2591e8bd"
+                },
+                "status": "advisory_only",
+                "target": {
+                  "adapter": "ecs_express",
+                  "provider": "aws",
+                  "region": "us-east-1",
+                  "service_name": "mcp-products-qualification"
+                }
+              },
+              "inspection": {
+                "baseline_format": "inspector-instances-v1",
+                "bytes_read": 288,
+                "complete": true,
+                "entries_visited": 3,
+                "file_states": [
+                  {
+                    "family": "docker",
+                    "path": "Dockerfile",
+                    "state": "analyzed"
+                  },
+                  {
+                    "family": "python",
+                    "path": "app.py",
+                    "state": "analyzed"
+                  }
+                ],
+                "files_analyzed": 2,
+                "files_considered": 2,
+                "issues": [
+                  
+                ],
+                "notes": [
+                  
+                ],
+                "profile": "python-fastapi-container-v1",
+                "rule_states": {
+                  "PR-CI-001": "not_applicable",
+                  "PR-CI-002": "not_applicable",
+                  "PR-DOCKER-001": "evaluated",
+                  "PR-DOCKER-002": "evaluated",
+                  "PR-DOCKER-003": "evaluated",
+                  "PR-DOCKER-004": "evaluated",
+                  "PR-FASTAPI-001": "evaluated",
+                  "PR-FASTAPI-002": "evaluated",
+                  "PR-PY-001": "evaluated",
+                  "PR-SECRET-001": "not_applicable"
+                },
+                "ruleset_version": "2026.10.18.1",
+                "scope_fingerprint": "sha256:ad13b6b0b95e5489e52e6444264f9d26d087059b10169917838f1fd5a0bbf330",
+                "skipped_counts": {
+                  "unsupported_file": 1
+                },
+                "verdict_meaning": "Findings and coverage for shipped static rules only; ready is not a production certification."
+              }
+            },
+            "product": "deployment-fixer",
+            "schema_version": "1.0",
+            "verdict": "plan_ready"
+          },
+          "billable": true,
+          "configuration_gaps": [
+            "image_uri"
+          ],
+          "coverage": {
+            "dockerfiles": 1,
+            "fastapi_detected": true,
+            "syntax_errors": false
+          },
+          "engine": "6f21b5d277c4d642943d007c1e55e407a2f8a45a82ebc11160b70ece22b84612",
+          "execution": "unavailable",
+          "infrastructure_cost": "unquoted",
+          "input_fingerprint": "90c78cdae7b5d49676a8246b95d23c475edfe6503afe20c0aaf03e8e27168b76",
+          "next_steps": [
+            "Review findings and deployment prerequisites.",
+            "Verify the image, start command, health route and required configuration.",
+            "Obtain a current infrastructure quote separately.",
+            "Apply any changes through your own reviewed deployment process."
+          ],
+          "prerequisites": [
+            {
+              "item": "Container image",
+              "status": "provide a reviewed immutable image identifier"
+            },
+            {
+              "item": "Task execution role",
+              "status": "not verified; have your AWS administrator review image-pull and logging permissions"
+            },
+            {
+              "item": "Infrastructure role",
+              "status": "not verified; review permissions for Express Mode infrastructure"
+            },
+            {
+              "item": "Region, networking and application configuration",
+              "status": "not verified; confirm availability, reachability, environment and secret references in your account"
+            },
+            {
+              "item": "Infrastructure budget",
+              "status": "unquoted; obtain a current estimate including supporting resources"
+            }
+          ],
+          "product": "deployment-fixer",
+          "references": [
+            "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-overview.html",
+            "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-create-full.html"
+          ],
+          "review_checklist": [
+            "Confirm all relevant source/configuration was included and the stateless scope is accurate.",
+            "Review each finding against its file/line evidence.",
+            "Verify the start command, listening port and health route at runtime.",
+            "Review image provenance, IAM permissions, network access and secret handling.",
+            "Approve infrastructure costs and define monitoring, rollback and resource removal before making changes."
+          ],
+          "supported_complete": true,
+          "verdict": "plan_ready"
+        }
+      }
+    ],
+    "cloud_actions": 0,
+    "mode": "hosted",
+    "target_code_executed": false
+  },
+  "server": {
+    "description": "Static FastAPI deployment assessment; AWS execution is unavailable.",
+    "icons": null,
+    "name": "ai.contentsweep/deployment-fixer",
+    "title": null,
+    "version": "1.0.0",
+    "website_url": null
+  },
+  "status": "passed",
+  "synthetic": true,
+  "tools": [
+    "upload_deployment_bundle",
+    "preview_deployment_bundle",
+    "quote_deployment_plan",
+    "start_deployment_plan",
+    "get_deployment_plan",
+    "read_deployment_report",
+    "delete_deployment_resource",
+    "deployment_fixer_wallet",
+    "deployment_fixer_billing_status",
+    "deployment_fixer_purchase_history"
+  ]
+}
