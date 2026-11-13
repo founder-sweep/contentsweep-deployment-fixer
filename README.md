@@ -1,5 +1,16 @@
 # Deployment Fixer integration
 
+<!-- contentsweep-proven-capability:begin -->
+**Fully capable of supported static FastAPI container assessments and advisory ECS prerequisites through hosted MCP or free local tools.**
+
+Proven static FastAPI deployment assessments with file-linked blockers and support checks. Repeatable hosted and free local demos; no builds or AWS actions.
+
+The repeatable cases show reload/root-user blockers with file evidence, a supported assessment, and stateful input rejected without a hosted debit. Both execution modes passed, with no image build or AWS action.
+
+[Inspect the result and repeat the demo](https://mcp.contentsweep.ai/deployment-fixer/demos/fastapi-assessment) · [Runnable package](demo/README.md) · [Capability and verification details](CAPABILITIES.md)
+<!-- contentsweep-proven-capability:end -->
+
+
 [Live offer](https://mcp.contentsweep.ai/deployment-fixer) · [workspace](https://mcp.contentsweep.ai/deployment-fixer/app) · [setup and privacy](https://mcp.contentsweep.ai/deployment-fixer/docs)
 
 Assess bounded stateless FastAPI source/configuration and get evidence, gaps and an advisory ECS Express plan. Five trial plans per verified organization; $20/10 thereafter. A supported completed assessment consumes one plan even with blocking findings. Unsupported/incomplete/platform failures are free. Product wallets and caps are separate; no subscription or automatic replenishment.
@@ -50,7 +61,7 @@ The marketplace contains Supplier Feeds, Data Quality Gate, Inspector, Schema Ma
 <!-- contentsweep-client-distribution:begin -->
 ## Gemini, Kilo, Cline and Cursor
 
-Assess a stateless FastAPI container and prepare an advisory ECS Express plan.
+Proven static FastAPI deployment assessments with file-linked blockers and support checks. Repeatable hosted and free local demos; no builds or AWS actions.
 
 Follow [client installation and recovery](CLIENTS.md). Native configuration examples, required settings, the existing skill and supported scope are included. Catalog submission and acceptance are recorded separately.
 <!-- contentsweep-client-distribution:end -->

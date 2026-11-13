@@ -1,6 +1,17 @@
 # Deployment Fixer: coding-agent setup
 
-Assess a stateless FastAPI container and prepare an advisory ECS Express plan.
+<!-- contentsweep-proven-capability:begin -->
+**Fully capable of supported static FastAPI container assessments and advisory ECS prerequisites through hosted MCP or free local tools.**
+
+Proven static FastAPI deployment assessments with file-linked blockers and support checks. Repeatable hosted and free local demos; no builds or AWS actions.
+
+The repeatable cases show reload/root-user blockers with file evidence, a supported assessment, and stateful input rejected without a hosted debit. Both execution modes passed, with no image build or AWS action.
+
+[Inspect the result and repeat the demo](https://mcp.contentsweep.ai/deployment-fixer/demos/fastapi-assessment) · [Runnable package](demo/README.md) · [Capability and verification details](CAPABILITIES.md)
+<!-- contentsweep-proven-capability:end -->
+
+
+Proven static FastAPI deployment assessments with file-linked blockers and support checks. Repeatable hosted and free local demos; no builds or AWS actions.
 
 ## Runtime and credentials
 

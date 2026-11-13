@@ -5,7 +5,7 @@
   "plugin": "contentsweep-deployment-fixer",
   "skill": "review-fastapi-deployment",
   "skill_path": "skills/review-fastapi-deployment/SKILL.md",
-  "description": "Assess a stateless FastAPI container and prepare an advisory ECS Express plan.",
+  "description": "Proven static FastAPI deployment assessments with file-linked blockers and support checks. Repeatable hosted and free local demos; no builds or AWS actions.",
   "homepage": "https://mcp.contentsweep.ai/deployment-fixer",
   "mode": "hosted",
   "endpoint": "https://mcp.contentsweep.ai/v1/deployment-fixer/mcp/",
@@ -110,5 +110,20 @@
       "run.py": "2376130d1534c3a3122eac183c1e01ec9da050de9ac6045b9d4c790bde572aae",
       "transfer.py": "125aede5160f1f291daa86d6f183d1faf5b470a2ed503f945e79af995d86bd2b"
     }
+  },
+  "marketing": {
+    "product": "deployment-fixer",
+    "title": "Deployment Fixer",
+    "description": "Proven static FastAPI deployment assessments with file-linked blockers and support checks. Repeatable hosted and free local demos; no builds or AWS actions.",
+    "capability": "Fully capable of supported static FastAPI container assessments and advisory ECS prerequisites through hosted MCP or free local tools.",
+    "proof": "The repeatable cases show reload/root-user blockers with file evidence, a supported assessment, and stateful input rejected without a hosted debit. Both execution modes passed, with no image build or AWS action.",
+    "scope": "Read-only bounded static FastAPI assessment. No imports, builds, cloud credentials, AWS execution, automatic fixes, runtime readiness assurance or infrastructure cost quote.",
+    "homepage": "https://mcp.contentsweep.ai/deployment-fixer",
+    "demo_url": "https://mcp.contentsweep.ai/deployment-fixer/demos/fastapi-assessment",
+    "recorded_result_url": "https://mcp.contentsweep.ai/deployment-fixer/demos/fastapi-assessment/expected.json",
+    "agent_evidence_url": "https://mcp.contentsweep.ai/deployment-fixer/demos/fastapi-assessment/agent-evidence.json",
+    "demo_archive_sha256": "bfc95856923f3e7072735b6f21228ed72a2f7380d8b0c16e94c701ef81e0e4cc",
+    "verification": "passed repeatable synthetic MCP workflows",
+    "native_gemini_capture": "passed"
   }
 }

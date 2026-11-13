@@ -1,7 +1,7 @@
 {
   "name": "contentsweep-deployment-fixer",
   "version": "1.0.0",
-  "description": "Assess a stateless FastAPI container and prepare an advisory ECS Express plan.",
+  "description": "Proven static FastAPI deployment assessments with file-linked blockers and support checks. Repeatable hosted and free local demos; no builds or AWS actions.",
   "mcpServers": {
     "contentsweep-deployment-fixer": {
       "headers": {
