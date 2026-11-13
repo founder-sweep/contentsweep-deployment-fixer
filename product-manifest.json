@@ -80,11 +80,11 @@
       "supported/source/app.py": "6b364fa31c6a086b9e7f20e925a7d9b4a850167fb63fa1e0b747d01dd81b0ae2",
       "supported/source/requirements.txt": "e9af2913de609d1de45b2fbab270c5a77281543c4dab6d1dd182f221fd04f683"
     },
-    "archive_sha256": "4ad0e2249872fd05df344790388a8b4e5082c71f280c0a45cbec19380208f7a4",
+    "archive_sha256": "bfc95856923f3e7072735b6f21228ed72a2f7380d8b0c16e94c701ef81e0e4cc",
     "recorded_result_sha256": "c7b95f252741b4ef1260f1b92db5c694d7ee1ec05a8d16fc07aa417c78132b6a",
     "agent_status": "passed",
     "fixtures_path": "demo/fixtures",
-    "source_base_commit": "f37a6edcf86ea4d2a4ce95fb4b6a3f6c0d8ab4ea",
+    "source_base_commit": "133f61f6e5f282b7a973cc189d425293960644af",
     "files": {
       "AGENT_PROMPT.md": "58a433d37fa578f3829b2df008d5b0cee38af012373b49ce94112a87749cab1c",
       "README.md": "d730cee55a31fff244d05c411a9dbbaf68f224532cd3da91c971d99ce5034ff5",
@@ -105,7 +105,7 @@
       "fixtures/supported/source/Dockerfile": "964c7c126cde9f80e91fd7c9d857d46ac56d9edc4876addd7fec4a20fb91f7b3",
       "fixtures/supported/source/app.py": "6b364fa31c6a086b9e7f20e925a7d9b4a850167fb63fa1e0b747d01dd81b0ae2",
       "fixtures/supported/source/requirements.txt": "e9af2913de609d1de45b2fbab270c5a77281543c4dab6d1dd182f221fd04f683",
-      "manifest.json": "cfbd79d5c495dd9928cc2dca46712e2126f1b49fd969508411b8f4c5d3049960",
+      "manifest.json": "279e6a81391ad6a79873b3a9a866e0e657bea8b984e65f4b8835d01b9117a1a5",
       "recorded/local-result.json": "c0b42a3222ce3001bb5fc97261e019e43923e1bd3aa84c2cc87d7e2612db4f03",
       "run.py": "2376130d1534c3a3122eac183c1e01ec9da050de9ac6045b9d4c790bde572aae",
       "transfer.py": "125aede5160f1f291daa86d6f183d1faf5b470a2ed503f945e79af995d86bd2b"
